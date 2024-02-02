@@ -7,3 +7,13 @@
     3. Compare what you see in Node to visiting the actual page in
        your Browser - what matches up?
 */
+
+import fetch from "node-fetch";
+
+const fetchCragsLists = async () => {
+  const result = await fetch("https://www.craigslist.org/about/");
+  const html = await result.text();
+  console.log(html);
+};
+
+fetchCragsLists()

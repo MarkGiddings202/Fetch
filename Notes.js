@@ -74,7 +74,7 @@ response
   })
   .then((html) => {
     // we grab the sucessful promise to that text & start a .then() chain on it
-    console.log(html);
+    // console.log(html);
   })
   .catch((error) => {
     // Handle any errors that occurred during the fetch
@@ -94,3 +94,12 @@ response
     use a .catch() method incase the promise were to ever fail.
     catch is still important because we don't want our programs to crash and fail.
    */
+
+const fetchData = async () =>{
+    const result = await fetch("https://wallhaven.cc/");
+    const html = await result.text();
+    console.log(html)
+    console.log("This works")
+}
+
+fetchData();
