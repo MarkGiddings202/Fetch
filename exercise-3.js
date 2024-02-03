@@ -17,3 +17,17 @@
     * This is purposefully challenging and will require lots of
       Googling to see how to parse the image and save it using Node.
 */
+
+import fs from "fs/promises"
+import fetch from "node-fetch"
+
+
+const fetchData = async () => {
+    const response = await fetch("https://w.wallhaven.cc/full/7p/wallhaven-7p39gy.png");
+    // how to parse an image and save it to your filesystem
+    const image = await response.arrayBuffer();
+    console.log(fs.writeFile("wallpaper.png", Buffer.from(image)));
+  };
+  
+  fetchData();
+  
